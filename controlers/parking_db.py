@@ -1,7 +1,7 @@
 import sqlite3
 
 def create_tables():
-    conn = sqlite3.connect('..\instance\parking.db')
+    conn = sqlite3.connect('instance/parking.db')
     c = conn.cursor()
 
     # 1. Users Table
@@ -80,7 +80,7 @@ def create_tables():
 
 
 def add_admin(email, password, full_name):
-    conn = sqlite3.connect('..\instance\parking.db')
+    conn = sqlite3.connect('instance/parking.db')
     c = conn.cursor()
     try:
         c.execute('''

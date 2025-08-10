@@ -2,7 +2,7 @@ from parking_db import *
 
 # print parking_lots
 def check_data():
-    conn = sqlite3.connect('instance\parking.db')
+    conn = sqlite3.connect('instance/parking.db')
     c = conn.cursor()
 
     # Check if all tables exist
@@ -42,7 +42,7 @@ def check_data():
 
 # print total lots available
 def total_lots_available():
-    conn = sqlite3.connect('instance\parking.db')
+    conn = sqlite3.connect('instance/parking.db')
     c = conn.cursor()
     c.execute('SELECT * FROM parking_lot')
     total_lots = c.fetchone()
@@ -54,7 +54,7 @@ total_lots_available()
 
 # print parking spots available
 def parking_spots_available():
-    conn = sqlite3.connect('instance\parking.db')
+    conn = sqlite3.connect('instance/parking.db')
     c = conn.cursor()
     c.execute('SELECT * FROM parking_spot')
     available_spots = c.fetchone()
