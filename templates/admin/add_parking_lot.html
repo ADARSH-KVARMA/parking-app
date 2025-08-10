@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Parking Lot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="/admin/add_lot" class="form-box">
+            <h2 class="form-title">Add New Parking Lot</h2>
+
+            <input type="text" name="location_name" placeholder="Prime Location Name" required>
+            <input type="number" name="price_per_hour" step="0.01" placeholder="Price per Hour (₹)" required>
+            <input type="text" name="address" placeholder="Address" required>
+            <input type="text" name="pin_code" placeholder="Pin Code" required>
+            <input type="number" name="num_spots" min="1" placeholder="Total Number of Spots" required>
+
+            <button type="submit" class="btn">Add Parking Lot</button>
+        </form>
+    </div>
+</body>
+</html>

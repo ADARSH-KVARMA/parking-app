@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Status</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='users.css') }}">
+    <style>
+        /* Custom styles to match the theme and ensure responsiveness */
+        .card-bg {
+            background-color: #ffffff; /* White background for cards */
+            /* Enhanced shadow and subtle border for better definition */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(230, 230, 230, 0.7); /* Light grey border */
+        }
+        .text-purple {
+            color: #8a2be2; /* Purple text */
+        }
+        .btn-purple {
+            background-color: #8a2be2; /* Purple button */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover */
+        }
+        .btn-purple:hover {
+            background-color: #6a1aab; 
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(138, 43, 226, 0.3);
+        }
+        .btn-purple:active {
+            transform: translateY(0); /* Press effect */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <div class="navbar">
+        <div class="left">Welcome to User</div>
+        <div class="center">
+            <a href="/">Home</a> |
+            <a href="/user/summary">Summary</a> |
+            <a href="/user/parking">My Parking</a> |
+            <a href="/logout">Logout</a>
+        </div>
+        <div class="right"><a href="/user/edit">Edit Profile</a></div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto p-6">
+        <h2 class="text-3xl font-bold text-center mb-8 text-purple">Yup... You Have Parked Car</h2>
+
+        <!-- Parking Status Card -->
+        <div class="card-bg rounded-xl p-6 mb-6 flex flex-col md:flex-row items-center md:items-stretch space-y-6 md:space-y-0 md:space-x-8 max-w-4xl mx-auto">
+            <!-- Left Half: Parking Image/Poster -->
+            <div class="w-full md:w-1/2 flex justify-center items-center p-2">
+                <img src="https://img.freepik.com/free-vector/parked-car-automobile-parking-lot-vehicle-free-park-area-lawn-grass-place-with-road-sign-illustration-cartoon_212005-190.jpg?size=626&ext=jpg"
+                     alt="Parking Car Poster">
+            </div>
+
+            <!-- Right Half: Status Information -->
+            {% if parking_data.spot_id != '' %}
+            <div class="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start p-2 text-gray-700">
+                <h3 class="text-3xl font-bold mb-5 text-purple text-center md:text-left leading-tight">
+                    Parking at {{parking_data.lot_name}}
+                </h3>
+
+                <!-- Parking Details - displayed directly -->
+                <p class="mb-3 text-lg"><strong class="text-purple">Lot Name:</strong> {{parking_data.lot_name}}</p>
+                <p class="mb-3 text-lg"><strong class="text-purple">Spot ID:</strong> {{parking_data.spot_id}}</p>
+                <p class="mb-3 text-lg"><strong class="text-purple">Parking Time:</strong> {{parking_data.parking_time}}</p>
+                <p class="mb-3 text-lg"><strong class="text-purple">Cost per Hour:</strong> {{parking_data.cost_per_hr}}</p>
+                <p class="mb-5 text-lg"><strong class="text-purple">Total Cost:</strong> {{parking_data.total_cost}}</p>
+
+                <div class="mt-4 w-full flex justify-center md:justify-start">
+                    <a href="/user/unpark?lot_id={{ parking_data.lotid }}"
+                       class="btn-purple text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-purple-300 focus:ring-opacity-75 text-xl font-semibold uppercase tracking-wide">
+                        Unpark Car
+                    </a>
+                </div>
+            </div>
+            {% else %}
+            <div class="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start p-2 text-gray-700">
+                <h3 class="text-3xl font-bold mb-5 text-purple text-center md:text-left leading-tight">
+                    You Dont Have Parking......
+                </h3>
+            </div>
+            {% endif %}
+
+
+
+        </div>
+    </main>
+
+</body>
+</html>

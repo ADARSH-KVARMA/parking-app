@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Parking Lot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .form-title {
+            margin-bottom: 1em;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.5em 0;
+            text-align: left;
+        }
+
+        .form-group label {
+            flex: 0 0 90px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            flex: 1;
+            padding: 0.6em;
+        }
+
+        form .btn {
+            margin-top: 1.5em;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 1.5em;
+            right: 1.5em;
+            font-size: 1.5em;
+            text-decoration: none;
+            color: #aaa;
+            font-weight: bold;
+        }
+
+        .close-button:hover {
+            color: #000;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cross button to exit -->
+        <a href="/user/dashboard" class="close-button">&times;</a>
+
+        <form method="POST" action="/user/edit" class="form-box">
+            <h2 class="form-title">Edit Parking Lot</h2>
+
+            <input type="hidden" name="user_id" value="{{ user_details[0] }}">
+
+            <div class="form-group">
+                <label for="full_name">Name :</label>
+                <input type="text" id="full_name" name="full_name" value="{{ user_details[3] }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="text" id="email" name="email" value="{{ user_details[1] }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password :</label>
+                <input type="text" id="password" name="password" value="{{ user_details[2] }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address :</label>
+                <input type="text" id="address" name="address" value="{{ user_details[4] }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pin_code">Pin Code :</label>
+                <input type="text" id="pin_code" name="pin_code" value="{{ user_details[5] }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="car_number">Car Number :</label>
+                <input type="text" id="car_number" name="car_number" value="{{ user_details[6] }}" required>
+            </div>
+
+            <button type="submit" class="btn">Update Parking Lot</button>
+        </form>
+    </div>
+</body>
+</html>

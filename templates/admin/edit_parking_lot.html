@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Parking Lot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="/admin/edit_lot/{{ lot[0] }}" class="form-box">
+            <h2 class="form-title">Edit Parking Lot</h2>
+
+            <input type="hidden" name="lot_id" value="{{ lot[0] }}">
+
+            <input type="text" name="prime_location_name" placeholder="{{ lot[1] }}" value="{{ lot[1] }}" required>
+            <input type="number" name="price_per_hour" step="0.01" placeholder="{{ lot[] }}" value="{{ lot[2] }}" required>
+            <input type="text" name="address" placeholder="Address" value="{{ lot[3] }}" required>
+            <input type="text" name="pin_code" placeholder="Pin Code" value="{{ lot[4] }}" required>
+            <input type="number" name="max_spots" min="1" placeholder="Total Number of Spots" value="{{ lot[5] }}" required>
+
+            <button type="submit" class="btn">Update Parking Lot</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,452 @@
+/* Basic Reset & Body Styling */
+body {
+    font-family: 'Inter', sans-serif; /* Using Inter font as per guidelines */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Light grey background */
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Distribute items with space between them */
+    align-items: center; /* Vertically align items in the center */
+    background-color: #a890fe; /* Purple background for the navbar */
+    padding: 1rem 2rem;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    flex-wrap: wrap; /* Allow navbar items to wrap on smaller screens */
+    border-bottom-left-radius: 8px; /* Rounded corners for the bottom of the navbar */
+    border-bottom-right-radius: 8px;
+}
+
+.navbar .left {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 1rem; /* Space between left and center */
+}
+
+.navbar .center {
+    flex-grow: 1; /* Allows the center section to take available space */
+    text-align: center;
+}
+
+.navbar .right {
+    margin-left: 1rem; /* Space between center and right */
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, border-radius 0.3s ease; /* Smooth transition for hover effects */
+    border-radius: 5px; /* Slightly rounded corners for links */
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent background on hover */
+    border-radius: 8px; /* More rounded on hover */
+}
+
+/* Heading Styling */
+.heading {
+    text-align: center;
+    color: #4a148c; /* Darker purple color for the main heading */
+    margin-top: 2.5rem; /* Increased margin for better spacing */
+    margin-bottom: 2.5rem; /* Increased margin for better spacing */
+    font-size: 2.5rem; /* Slightly larger heading */
+    font-weight: 700; /* Bolder heading */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Enhanced text shadow */
+}
+
+/* Lot Container Styling */
+.lot-container {
+    display: grid; /* Use CSS Grid for a responsive card layout */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Auto-fit cards, min 320px wide */
+    gap: 2rem; /* Increased space between cards */
+    padding: 1.5rem;
+    max-width: 1200px; /* Max width for the container */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Lot Card Styling */
+.lot-card {
+    background-color: #fff;
+    border: none; /* Removed border, relying on shadow */
+    border-radius: 16px; /* Even more rounded corners for a softer look */
+    padding: 2rem; /* Increased padding */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12); /* Deeper, softer shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+    display: flex;
+    flex-direction: column;
+    /*justify-content:space-around; /* Distribute content nicely */
+    overflow: hidden; /* Ensure content stays within rounded corners */
+    position: relative; /* For potential absolute positioning of elements */
+}
+
+.lot-card:hover {
+    transform: translateY(-8px); /* Lift card more on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18); /* Stronger, more prominent shadow on hover */
+}
+
+.lot-card h3 {
+    color: #6a1b9a; /* Blue color for lot name */
+    margin-top: 0;
+    margin-bottom: 1.2rem; /* Adjusted margin */
+    font-size: 1.75rem; /* Larger font size for title */
+    font-weight: 700;
+    border-bottom: 2px solid #f0f2f5; /* Lighter separator under the title */
+    padding-bottom: 0.8rem;
+}
+
+.lot-actions {
+    margin-top: 1.5rem; /* Space above buttons */
+    margin-bottom: 1rem; /* Space below buttons */
+    display: flex; /* Use flexbox for button layout */
+    gap: 1rem; /* Space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    bottom: 0%;
+}
+
+.lot-actions a {
+    flex: 1; /* Allow buttons to grow and shrink */
+    min-width: 50px; /* Minimum width for buttons */
+    background-color: #a890fe; /* Background color for buttons */
+    color: #fff; /* White text for buttons */
+    text-decoration: none;
+    padding: 0.8rem 1.2rem; /* Padding for buttons */
+    border-radius: 8px; /* Rounded corners for buttons */
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for buttons */
+}
+
+.lot-actions a:hover {
+    background-color: #8f7ae2; /* Slightly darker purple on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+    color: #fff; /* Ensure text color remains white on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+.occupancy {
+    margin-bottom: 1.5rem; /* Space below occupancy text */
+    font-size: 1rem; /* Standard font size */
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.occupancy i {
+    margin-right: 0.6rem; /* Space between icon and text */
+    color: #7e57c2; /* Color for icons */
+    font-size: 1.1rem;
+}
+
+.occupancy strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Spots Grid Styling */
+.spots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); /* Flexible columns for spots */
+    gap: 8px; /* Space between spots */
+    padding-top: 1rem;
+    border-top: 1px solid #eee; /* Separator above spots grid */
+    margin-top: 1rem; /* Space between occupancy and grid */
+}
+
+.spot {
+    background-color: #f8f8f8; /* Light background for spots */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners for spots */
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a148c; /* Default text color for spots */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
+    transition: all 0.2s ease;
+}
+
+.spot.occupied {
+    background-color: #dacbff; /* Light red for occupied */
+    border-color: #a890fe; /* Red border */
+    color: #662fd3; /* Darker red text */
+    box-shadow: inset 0 1px 3px rgba(115, 47, 211, 0.2);
+}
+
+.spot.available {
+    background-color: #d4edda; /* Light green for available */
+    border-color: #81c784; /* Green border */
+    color: #388e3c; /* Darker green text */
+    box-shadow: inset 0 1px 3px rgba(56, 142, 60, 0.2);
+}
+
+/* Add Lot Button Styling */
+.add-lot {
+    text-align: center;
+    margin: 2.5rem auto 3rem auto; /* Centered, generous margin */
+    max-width: 1200px;
+}
+
+#addLotBtn {
+    background-color: #a890fe; /* Purple background */
+    color: #fff;
+    border: none;
+    border-radius: 10px; /* More rounded button */
+    padding: 1.2rem 2.5rem; /* Larger padding for a prominent button */
+    font-size: 1.3rem; /* Larger font size */
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    letter-spacing: 0.05em; /* Slight letter spacing */
+    display: inline-flex; /* Align icon and text */
+    align-items: center;
+    gap: 0.8rem; /* Space between icon and text */
+}
+
+#addLotBtn::before {
+    content: "\2b"; /* Plus icon */
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#addLotBtn:hover {
+    background-color: #8f7ae2; /* Darker purple on hover */
+    transform: translateY(-3px); /* Lift button on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
+}
+
+/* Overlay for the modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6); /* Darker overlay for better contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0; /* Start hidden for animation */
+    visibility: hidden; /* Start hidden for animation */
+    transition: opacity 0.5s ease, visibility 0.3s ease; /* Smooth transition */
+}
+
+.modal-overlay.show-modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #9c7be4; /* Matching the navbar purple */
+    color: #fff; /* White text for contrast */
+    padding: 25px 35px;
+    border-radius: 12px;
+    width: 380px;
+    position: absolute;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5); /* Stronger, darker shadow */
+    transform: scale(0.8); /* Start smaller for animation */
+    transition: transform 0.3s ease; /* Smooth transition for scale */
+    opacity: 0; /* Start hidden for animation */
+}
+
+.modal-overlay.show-modal .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px; /* Larger close button */
+    cursor: pointer;
+    color: #ccc; /* Lighter color for close button */
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #350b4f;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #560588;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    margin-bottom: 8px;
+    font-size: 1.05em;
+}
+
+.modal-content strong {
+    color: #ffffff;
+}
+
+.spot.occupied:hover {
+    transform: scale(1.005);
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+/* Occupancy Progress Bar */
+.occupancy-wrapper {
+    margin-top: -2rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+.occupancy-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 12px; /* Height of the progress bar */
+    margin-top: 0.5rem;
+}
+
+.occupancy-bar {
+    height: 100%;
+    background-color: #7e57c2; /* Purple color for the progress */
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+.occupancy-text {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .navbar .left,
+    .navbar .right {
+        margin: 0.5rem 0; /* Adjust margins for stacked layout */
+    }
+
+    .navbar .center {
+        margin: 1rem 0;
+        width: 100%; /* Take full width */
+    }
+
+    .navbar .center a {
+        display: block; /* Make links block level */
+        margin-bottom: 0.5rem;
+    }
+
+    .heading {
+        font-size: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .lot-container {
+        grid-template-columns: 1fr; /* Single column layout on small screens */
+        padding: 1rem;
+        gap: 1.5rem; /* Slightly reduced gap on small screens */
+    }
+
+    .lot-card {
+        padding: 1.5rem; /* Adjusted padding for smaller cards */
+    }
+
+    .lot-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .lot-actions a {
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .occupancy {
+        font-size: 0.9rem;
+    }
+
+    .spots-grid {
+        grid-template-columns: repeat(auto-fill, minmax(35px, 1fr)); /* Adjust spot size */
+        gap: 6px;
+    }
+
+    .spot {
+        padding: 0.4rem;
+        font-size: 0.85rem;
+    }
+
+    #addLotBtn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.75rem;
+    }
+
+    .navbar .left {
+        font-size: 1rem;
+    }
+
+    .navbar a {
+        padding: 0.3rem 0.7rem;
+    }
+
+    .heading {
+        font-size: 1.8rem;
+    }
+
+    .lot-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .lot-actions {
+        flex-direction: column; /* Stack buttons vertically on very small screens */
+        gap: 0.8rem;
+    }
+
+    .lot-actions a {
+        width: 100%; /* Full width for stacked buttons */
+        min-width: unset; /* Remove min-width restriction */
+    }
+
+    .occupancy {
+        font-size: 0.85rem;
+    }
+
+    .spots-grid {
+        grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); /* Further adjust spot size */
+        gap: 5px;
+    }
+
+    .spot {
+        padding: 0.3rem;
+        font-size: 0.8rem;
+    }
+
+    #addLotBtn {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+    }
+}

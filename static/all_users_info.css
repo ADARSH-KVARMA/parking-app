@@ -1,0 +1,198 @@
+/* Basic Reset & Body Styling */
+body {
+    font-family: 'Inter', sans-serif; /* Using Inter font as per guidelines */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Light grey background */
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Distribute items with space between them */
+    align-items: center; /* Vertically align items in the center */
+    background-color: #a890fe; /* Purple background for the navbar */
+    padding: 1rem 2rem;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    flex-wrap: wrap; /* Allow navbar items to wrap on smaller screens */
+    border-bottom-left-radius: 8px; /* Rounded corners for the bottom of the navbar */
+    border-bottom-right-radius: 8px;
+}
+
+.navbar .left {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 1rem; /* Space between left and center */
+}
+
+.navbar .center {
+    flex-grow: 1; /* Allows the center section to take available space */
+    text-align: center;
+}
+
+.navbar .right {
+    margin-left: 1rem; /* Space between center and right */
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, border-radius 0.3s ease; /* Smooth transition for hover effects */
+    border-radius: 5px; /* Slightly rounded corners for links */
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent background on hover */
+    border-radius: 8px; /* More rounded on hover */
+}
+
+/* Heading Styling */
+.dashboard-heading { /* Renamed to avoid conflict with existing 'heading' */
+    text-align: center;
+    color: #4a148c; /* Darker purple color for the main heading */
+    margin-top: 2.5rem; /* Increased margin for better spacing */
+    margin-bottom: 2.5rem; /* Increased margin for better spacing */
+    font-size: 2.5rem; /* Slightly larger heading */
+    font-weight: 700; /* Bolder heading */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Enhanced text shadow */
+}
+
+/* Table Container Styling */
+.table-container { /* Changed from lot-container to table-container for clarity */
+    padding: 1.5rem;
+    max-width: 1200px; /* Max width for the container */
+    margin: 0 auto; /* Center the container */
+    background-color: #fff;
+    border-radius: 16px; /* Rounded corners for the table container */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12); /* Deeper, softer shadow */
+    overflow-x: auto; /* Enable horizontal scrolling on small screens if needed */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse table borders */
+    border-radius: 12px; /* Rounded corners for the table itself */
+    overflow: hidden; /* Ensures internal elements respect border-radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for the table */
+}
+
+th, td {
+    padding: 1.2rem 1.5rem; /* Increased padding for table cells */
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0; /* Lighter border for rows */
+}
+
+th {
+    background-color: #7e57c2; /* Darker purple for header */
+    color: #fff;
+    font-weight: 600; /* Semi-bold font */
+    text-transform: uppercase; /* Uppercase text */
+    font-size: 0.95rem; /* Slightly larger font for headers */
+}
+
+th:first-child {
+    border-top-left-radius: 12px; /* Rounded top-left for header */
+}
+
+th:last-child {
+    border-top-right-radius: 12px; /* Rounded top-right for header */
+}
+
+tbody tr:last-child td {
+    border-bottom: none; /* No bottom border for the last row */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f8f8; /* Subtle stripe effect for rows */
+}
+
+tbody tr:hover {
+    background-color: #f0f0f0; /* Light hover effect for rows */
+}
+
+td {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Empty data message */
+.no-data-message {
+    padding: 2rem;
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    font-size: 1.1rem;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    margin: 2.5rem auto;
+    max-width: 600px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .navbar .left,
+    .navbar .right {
+        margin: 0.5rem 0; /* Adjust margins for stacked layout */
+    }
+
+    .navbar .center {
+        margin: 1rem 0;
+        width: 100%; /* Take full width */
+    }
+
+    .navbar .center a {
+        display: block; /* Make links block level */
+        margin-bottom: 0.5rem;
+    }
+
+    .dashboard-heading {
+        font-size: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .table-container {
+        padding: 1rem;
+        margin: 1rem; /* Adjust margin for smaller screens */
+    }
+
+    th, td {
+        padding: 0.8rem 1rem; /* Smaller padding for table cells */
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.75rem;
+    }
+
+    .navbar .left {
+        font-size: 1rem;
+    }
+
+    .navbar a {
+        padding: 0.3rem 0.7rem;
+    }
+
+    .dashboard-heading {
+        font-size: 1.8rem;
+    }
+
+    th, td {
+        padding: 0.6rem 0.8rem; /* Even smaller padding */
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,39 @@
+.dashboard-container {
+    max-width: 1500px;
+    margin: auto;
+    background-color: transparent;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-header {
+    background-color: #a890fe;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    border-radius: 5px 5px 0 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.info-card {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.info-card h5 {
+    color: #000000;
+    margin-bottom: 10px;
+}
+.info-card p {
+    margin-bottom: 5px;
+}
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
