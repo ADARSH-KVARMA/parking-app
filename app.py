@@ -42,7 +42,7 @@ def login():
 def signin():
     if request.method == 'POST':
         try:
-            conn = sqlite3.connect('instance\parking.db')
+            conn = sqlite3.connect('tmp\parking.db')
             c = conn.cursor()
             c.execute("""
                     INSERT INTO users (email, password, full_name, address, pin_code, car_number)

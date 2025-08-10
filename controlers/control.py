@@ -4,7 +4,7 @@
 import sqlite3
 from datetime import datetime
 
-db_path = 'instance/parking.db'
+db_path = 'tmp/parking.db'
 
 def get_user(email):
     conn = sqlite3.connect(db_path)
@@ -305,7 +305,7 @@ def delete_parking_lot(lot_id : int):
         return "Lot is courrently occupied! Cannot delete Lot"
     else:
         delete_parking_spot(lot_id=lot_id)
-        conn = sqlite3.connect("instance/parking.db")
+        conn = sqlite3.connect("tmp/parking.db")
         cursor = conn.cursor()
 
         cursor.execute("DELETE FROM parking_lot WHERE id = ?", (lot_id,))
