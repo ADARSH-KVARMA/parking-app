@@ -71,7 +71,7 @@ def edit_lot(lot_id):
         return redirect(url_for('admin.admin_dashboard'))
 
     # Fetch the current details of the parking lot
-    conn = sqlite3.connect('instance/parking.db')
+    conn = sqlite3.connect('tmp/parking.db')
     c = conn.cursor()
     c.execute('SELECT * FROM parking_lot WHERE id = ?', (lot_id,))
     lot_details = c.fetchone()
